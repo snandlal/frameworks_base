@@ -2954,6 +2954,7 @@ public class PowerManagerService extends IPowerManager.Stub
             boolean enabled = (mode == SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
             if (mUseSoftwareAutoBrightness && mAutoBrightessEnabled != enabled) {
                 mAutoBrightessEnabled = enabled;
+		enableLightSensorLocked(mAutoBrightessEnabled);
                 // This will get us a new value
                 enableLightSensorLocked(mAutoBrightessEnabled && isScreenOn());
             }
