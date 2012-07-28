@@ -177,6 +177,9 @@ extern int register_android_content_res_ObbScanner(JNIEnv* env);
 extern int register_android_content_res_Configuration(JNIEnv* env);
 extern int register_android_animation_PropertyValuesHolder(JNIEnv *env);
 extern int register_com_android_internal_content_NativeLibraryHelper(JNIEnv *env);
+#ifdef QCOM_HARDWARE
+extern int register_com_android_internal_app_ActivityTrigger(JNIEnv *env);
+#endif
 
 static AndroidRuntime* gCurRuntime = NULL;
 
