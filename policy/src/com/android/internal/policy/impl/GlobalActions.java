@@ -242,6 +242,22 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
                     mWindowManagerFuncs.shutdown(true);
                 }
 
+                public boolean showDuringKeyguard() {
+                    return true;
+                }
+
+                public boolean showBeforeProvisioning() {
+                    return true;
+                }
+            });
+
+        // next: reboot
+        mItems.add(
+            new SinglePressAction(R.drawable.ic_lock_reboot, R.string.global_action_reboot) {
+                public void onPress() {
+                    mWindowManagerFuncs.reboot();
+                }
+
                 public boolean onLongPress() {
                     mWindowManagerFuncs.rebootSafeMode(true);
                     return true;
@@ -390,6 +406,7 @@ class GlobalActions implements DialogInterface.OnDismissListener, DialogInterfac
         mAirplaneModeOn.updateState(mAirplaneState);
         mAdapter.notifyDataSetChanged();
         mDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
+	mDialog.setTitle(R.string.global_actions);
         if (SHOW_SILENT_TOGGLE) {
             IntentFilter filter = new IntentFilter(AudioManager.RINGER_MODE_CHANGED_ACTION);
             mContext.registerReceiver(mRingerModeReceiver, filter);
