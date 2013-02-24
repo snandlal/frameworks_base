@@ -3400,6 +3400,14 @@ public final class Settings {
         public static final String WIFI_WATCHDOG_POOR_NETWORK_TEST_ENABLED =
                 "wifi_watchdog_poor_network_test_enabled";
 
+       /**
+        * Setting to turn on suspend optimizations at screen off on Wi-Fi. Enabled by default and
+        * needs to be set to 0 to disable it.
+        * @hide
+        */
+       public static final String WIFI_SUSPEND_OPTIMIZATIONS_ENABLED =
+               "wifi_suspend_optimizations_enabled";
+
         /**
          * Setting to turn off walled garden test on Wi-Fi. Feature is enabled by default and
          * the setting needs to be set to 0 to disable it.
